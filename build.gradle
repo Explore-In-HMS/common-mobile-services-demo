@@ -7,7 +7,10 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version" // Hilt classpath'ini ekleyin
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+        classpath "com.android.tools.build:gradle:7.2.0"
+        classpath 'com.huawei.agconnect:agcp:1.7.1.300'
+        classpath 'com.google.gms:google-services:4.3.15'
     }
 }
 
@@ -21,6 +24,6 @@ plugins {
 
 allprojects {
     repositories {
-        // Diğer repository tanımlamaları
+
     }
 }

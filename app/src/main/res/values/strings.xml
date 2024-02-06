@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CMS Demo</string>
+    <string name="welcome_cms_demo_project">Welcome CMS Demo Project</string>
 </resources>
