@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "49692832347",
+    "project_id": "cms-demo-project-bf229",
+    "storage_bucket": "cms-demo-project-bf229.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49692832347:android:7c80f65edde8327f60c57e",
+        "android_client_info": {
+          "package_name": "huawei.cmsdemo.main"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRFDw77Yl0kNt6bNi2n_JWfluGZzhr88c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
