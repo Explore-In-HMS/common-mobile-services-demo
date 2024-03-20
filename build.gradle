@@ -1,5 +1,3 @@
-
-
 buildscript {
     ext {
         hilt_version = '2.38.1' // Hilt sürümünü tanımlayın
@@ -20,10 +18,5 @@ plugins {
     id 'com.android.library' version '8.0.2' apply false
     id 'org.jetbrains.kotlin.android' version '1.8.20' apply false
     id 'org.jetbrains.kotlin.jvm' version '1.8.20' apply false
-}
-
-allprojects {
-    repositories {
-
-    }
+    id 'androidx.navigation.safeargs.kotlin' version '2.5.0' apply false
 }
