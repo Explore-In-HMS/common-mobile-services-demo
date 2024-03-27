@@ -5,11 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import huawei.cmsdemo.main.data.model.ServicesInfo
+import dagger.hilt.android.AndroidEntryPoint
 import huawei.cmsdemo.main.databinding.FragmentHomeScreenBinding
 import huawei.cmsdemo.main.ui.home.adapter.ServicesAdapter
 import huawei.cmsdemo.main.util.Util
 
+@AndroidEntryPoint
 class HomeScreen : Fragment() {
 
     private lateinit var binding: FragmentHomeScreenBinding
