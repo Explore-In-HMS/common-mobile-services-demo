@@ -66,4 +66,9 @@ dependencies {
     // Hilt
     implementation "com.google.dagger:hilt-android:2.45"
     kapt "com.google.dagger:hilt-compiler:2.45"
+
+    // Ads
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:ads:3.0'
+    implementation 'com.google.android.gms:play-services-ads:22.2.0'
+    implementation 'com.huawei.hms:ads-prime:3.4.62.302'
 }
