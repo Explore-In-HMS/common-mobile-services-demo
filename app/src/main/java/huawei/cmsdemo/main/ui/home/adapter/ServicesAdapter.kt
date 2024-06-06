@@ -40,7 +40,7 @@ class ServicesAdapter(private val serviceList: List<ServicesInfo>, private val o
                 tvServiceVersion.text = service.version
                 Glide.with(itemView.context).load(service.imageUrl).into(ivServiceImage)
                 cvService.setOnClickListener {
-                    onClick
+                    onClick(adapterPosition)
                 }
             }
         }

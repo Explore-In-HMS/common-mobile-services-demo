@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">CMS Demo</string>
     <string name="welcome_cms_demo_project">Welcome CMS Demo Project</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="ads_screen">ADS SCREEN</string>
 </resources>

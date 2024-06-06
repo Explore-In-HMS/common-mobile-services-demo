@@ -1,5 +1,6 @@
 package huawei.cmsdemo.main.util
 
+import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.data.model.ServicesInfo
 
 object Util {
@@ -10,7 +11,7 @@ object Util {
         ServicesInfo("Analytics Kit", "2.4.5", "https://cdn-icons-png.flaticon.com/128/11738/11738555.png"),
         ServicesInfo("Account Kit", "2.4.5", "https://cdn-icons-png.flaticon.com/128/709/709579.png"),
         ServicesInfo("Auth Service", "2.4.5","https://cdn-icons-png.flaticon.com/128/5048/5048687.png"),
-        ServicesInfo("Ads Kit", "2.4.5", "https://cdn-icons-png.flaticon.com/128/6317/6317510.png"),
+        ServicesInfo("Ads Kit", "2.4.5", "https://cdn-icons-png.flaticon.com/128/6317/6317510.png", R.id.action_homeScreen_to_adsScreen),
         ServicesInfo("Image Classification", "2.4.5", "https://cdn-icons-png.flaticon.com/128/3342/3342137.png"),
         ServicesInfo("Safety Kit", "2.4.5", "https://cdn-icons-png.flaticon.com/128/1161/1161490.png"),
         ServicesInfo("Crash", "2.4.5", "https://cdn-icons-png.flaticon.com/128/8603/8603355.png"),

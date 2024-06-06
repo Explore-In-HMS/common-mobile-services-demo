@@ -9,5 +9,14 @@
         android:id="@+id/homeScreen"
         android:name="huawei.cmsdemo.main.ui.home.HomeScreen"
         android:label="fragment_home_screen"
-        tools:layout="@layout/fragment_home_screen" />
+        tools:layout="@layout/fragment_home_screen" >
+        <action
+            android:id="@+id/action_homeScreen_to_adsScreen"
+            app:destination="@id/adsScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/adsScreen"
+        android:name="huawei.cmsdemo.main.ui.ads.AdsScreen"
+        android:label="fragment_ads_screen"
+        tools:layout="@layout/fragment_ads_screen" />
 </navigation>
