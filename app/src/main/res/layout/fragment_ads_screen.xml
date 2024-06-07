@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ads.AdsScreen">
 
-    <androidx.constraintlayout.widget.ConstraintLayout        android:id="@+id/clMainView"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMainView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -14,7 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView            android:id="@+id/tvAdsTitle"
+        <TextView
+            android:id="@+id/tvAdsTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -26,7 +29,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button            android:id="@+id/btnInterstitialAds"
+        <Button
+            android:id="@+id/btnInterstitialAds"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -37,7 +41,9 @@
             app:layout_constraintTop_toBottomOf="@id/tvAdsTitle" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    <ProgressBar        android:id="@+id/progressBar"
+
+    <ProgressBar
+        android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"

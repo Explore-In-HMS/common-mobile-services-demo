@@ -52,8 +52,8 @@ class AdsScreen : Fragment() {
                     }
                 })
             }
-        }    }
-
+        }
+    }
 
     private fun showProgress() {
         with(binding) {
