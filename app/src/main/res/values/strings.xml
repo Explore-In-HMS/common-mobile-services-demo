@@ -3,4 +3,8 @@
     <string name="welcome_cms_demo_project">Welcome CMS Demo Project</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="ads_screen">ADS SCREEN</string>
+    <string name="show_interstitial_ads">Show Interstitial Ads</string>
+    <string name="interstitial_ad_loading">Interstitial Ad Loading…</string>
+    <string name="interstitial_ad_loaded">Interstitial Ad Loaded!</string>
+    <string name="interstitial_ad_failed">Interstitial Ad Failed: </string>
 </resources>
