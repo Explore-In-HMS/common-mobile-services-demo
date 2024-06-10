@@ -10,6 +10,7 @@ import com.google.android.gms.ads.AdRequest
 import com.hms.lib.commonmobileservices.ads.interstitial.InterstitialAd
 import com.hms.lib.commonmobileservices.ads.interstitial.common.InterstitialAdLoadCallback
 import com.hms.lib.commonmobileservices.ads.interstitial.implementation.IInterstitialAd
+import com.huawei.hms.ads.AdListener
 import com.huawei.hms.ads.AdParam
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentAdsScreenBinding
@@ -32,27 +33,58 @@ class AdsScreen : Fragment() {
 
     private fun initUI() {
         with(binding) {
+            btnBannerAds.setOnClickListener {
+                showBannerAd()
+            }
+
             btnInterstitialAds.setOnClickListener {
-                showProgress()
-                requireContext().toastLong(getString(R.string.interstitial_ad_loading))
-                val adRequest = AdRequest.Builder().build()
-                val adParam = AdParam.Builder().build()
-
-                InterstitialAd.load(requireContext(), HMS_AD_ID, GMS_AD_ID, adRequest, adParam, object :
-                    InterstitialAdLoadCallback {
-                    override fun onAdLoadFailed(adError: String) {
-                        hideProgress()
-                        requireContext().toastShort(getString(R.string.interstitial_ad_failed) + adError)
-                    }
-
-                    override fun onInterstitialAdLoaded(interstitialAd: IInterstitialAd) {
-                        hideProgress()
-                        requireContext().toastShort(getString(R.string.interstitial_ad_loaded))
-                        interstitialAd.show(requireActivity())
-                    }
-                })
+                showInterstitialAd()
             }
         }
+    }
+
+    private fun showBannerAd() {
+        val bannerView = binding.hwBannerView
+        val adParam = AdParam.Builder().build()
+        bannerView.loadAd(adParam)
+
+        val adListener: AdListener = object : AdListener() {
+            override fun onAdLoaded() {
+                requireContext().toastShort(getString(R.string.banner_ad_loaded))
+            }
+
+            override fun onAdFailed(errorCode: Int) {
+                requireContext().toastShort(getString(R.string.banner_ad_failed) + errorCode)
+            }
+
+            override fun onAdClosed() {
+                bannerView.destroy()
+                requireContext().toastShort(getString(R.string.banner_ad_closed))
+            }
+        }
+
+        bannerView.adListener = adListener
+    }
+
+    private fun showInterstitialAd() {
+        showProgress()
+        requireContext().toastLong(getString(R.string.interstitial_ad_loading))
+        val adRequest = AdRequest.Builder().build()
+        val adParam = AdParam.Builder().build()
+
+        InterstitialAd.load(requireContext(), HMS_AD_ID, GMS_AD_ID, adRequest, adParam, object :
+            InterstitialAdLoadCallback {
+            override fun onAdLoadFailed(adError: String) {
+                hideProgress()
+                requireContext().toastShort(getString(R.string.interstitial_ad_failed) + adError)
+            }
+
+            override fun onInterstitialAdLoaded(interstitialAd: IInterstitialAd) {
+                hideProgress()
+                requireContext().toastShort(getString(R.string.interstitial_ad_loaded))
+                interstitialAd.show(requireActivity())
+            }
+        })
     }
 
     private fun showProgress() {
@@ -61,6 +93,7 @@ class AdsScreen : Fragment() {
             clMainView.isVisible = false
         }
     }
+
     private fun hideProgress() {
         with(binding) {
             progressBar.isVisible = false
