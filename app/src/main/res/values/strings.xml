@@ -4,7 +4,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="ads_screen">ADS SCREEN</string>
     <string name="show_interstitial_ads">Show Interstitial Ads</string>
+    <string name="show_rewarded_ads">Show Rewarded Ads</string>
     <string name="interstitial_ad_loading">Interstitial Ad Loading…</string>
+    <string name="rewarded_ad_loading">Rewarded Ad Loading…</string>
     <string name="interstitial_ad_loaded">Interstitial Ad Loaded!</string>
+    <string name="rewarded_ad_loaded">Rewarded Ad Loaded!</string>
     <string name="interstitial_ad_failed">Interstitial Ad Failed: </string>
+    <string name="rewarded_ad_failed">Rewarded Ad Failed: </string>
+    <string name="earned_reward_score">"Earned Reward(score): "</string>
 </resources>
