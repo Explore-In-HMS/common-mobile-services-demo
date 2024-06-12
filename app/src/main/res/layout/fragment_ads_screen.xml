@@ -10,10 +10,10 @@
         android:id="@+id/hw_banner_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:bannerSize="BANNER_SIZE_SMART"
-        app:adId="testw6vs28auh3"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        app:adId="testw6vs28auh3"
+        app:bannerSize="BANNER_SIZE_SMART"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -41,11 +41,11 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/btnInterstitialAds"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnBannerAds"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="@string/show_interstitial_ads"
+            android:text="@string/show_banner_ad"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,14 +53,15 @@
 
         <Button
             android:id="@+id/btnRewardedAds"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="@string/show_rewarded_ads"
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnInterstitialAds" />
+            app:layout_constraintTop_toBottomOf="@id/btnBannerAds" />
+
         <Button
             android:id="@+id/btnInterstitialAds"
             android:layout_width="200dp"
@@ -70,7 +71,7 @@
             android:textAllCaps="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btnBannerAds" />
+            app:layout_constraintTop_toBottomOf="@id/btnRewardedAds" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -78,11 +79,11 @@
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:indeterminateTint="@color/purple_500"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
