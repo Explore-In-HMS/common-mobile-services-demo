@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_homeScreen_to_adsScreen"
             app:destination="@id/adsScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_mapScreen"
+            app:destination="@id/mapScreen" />
     </fragment>
     <fragment
         android:id="@+id/adsScreen"
         android:name="huawei.cmsdemo.main.ui.ads.AdsScreen"
         android:label="fragment_ads_screen"
         tools:layout="@layout/fragment_ads_screen" />
+    <fragment
+        android:id="@+id/mapScreen"
+        android:name="huawei.cmsdemo.main.ui.map.MapScreen"
+        android:label="fragment_map_screen"
+        tools:layout="@layout/fragment_map_screen" />
 </navigation>
