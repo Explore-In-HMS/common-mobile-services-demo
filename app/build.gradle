@@ -72,6 +72,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-ads:22.2.0'
     implementation 'com.huawei.hms:ads-prime:3.4.62.302'
 
+    // Map
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:mapkit:3.0'
+
     // Location
     implementation 'com.github.Explore-In-HMS.common-mobile-services:location:3.0'
 }
