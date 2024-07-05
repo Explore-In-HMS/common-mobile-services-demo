@@ -74,4 +74,7 @@ dependencies {
 
     // Map
     implementation 'com.github.Explore-In-HMS.common-mobile-services:mapkit:3.0'
+
+    // Location
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:location:3.0'
 }
