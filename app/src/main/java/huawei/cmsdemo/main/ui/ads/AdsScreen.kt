@@ -26,6 +26,11 @@ import huawei.cmsdemo.main.util.Constants.HMS_AD_ID_INTERSTITIAL
 import huawei.cmsdemo.main.util.Constants.HMS_AD_ID_REWARDED
 import huawei.cmsdemo.main.util.toastLong
 import huawei.cmsdemo.main.util.toastShort
+import com.hms.lib.commonmobileservices.ads.splash.SplashAd
+import com.hms.lib.commonmobileservices.ads.splash.common.SplashAdLoadCallback
+import com.hms.lib.commonmobileservices.ads.splash.implementation.ISplashAd
+import huawei.cmsdemo.main.util.Constants.GMS_AD_ID_SPLASH
+import huawei.cmsdemo.main.util.Constants.HMS_AD_ID_SPLASH
 
 class AdsScreen : Fragment() {
     private lateinit var binding: FragmentAdsScreenBinding
@@ -51,7 +56,39 @@ class AdsScreen : Fragment() {
             btnInterstitialAds.setOnClickListener {
                 showInterstitialAd()
             }
+            btnSplashAds.setOnClickListener {
+                showSplashAd()
+            }
         }
+    }
+
+    private fun showSplashAd() {
+        showProgress()
+        requireContext().toastLong(getString(R.string.splash_ad_loading))
+        val adParam = AdParam.Builder().build()
+        val splashView = binding.hwSplashView
+        SplashAd.load(
+            requireContext(),
+            HMS_AD_ID_SPLASH,
+            GMS_AD_ID_SPLASH,
+            splashView,
+            0,
+            object: SplashAdLoadCallback {
+                override fun onAdLoadFailed(adError: String) {
+                    hideProgress()
+                    requireContext().toastShort(getString(R.string.splash_ad_failed) + adError)
+                }
+
+                override fun onSplashAdLoaded(splashAd: ISplashAd) {
+                    hideProgress()
+                    requireContext().toastShort(getString(R.string.splash_ad_loaded))
+                    splashAd.show(requireActivity())
+                }
+
+            },
+            adParam
+        )
+
     }
 
     private fun showBannerAd() {
