@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">CMS Demo</string>
     <string name="welcome_cms_demo_project">Welcome CMS Demo Project</string>
+
+    // Ads Kit
     <string name="ads_screen">ADS SCREEN</string>
     <string name="show_interstitial_ads">Show Interstitial Ads</string>
     <string name="show_rewarded_ads">Show Rewarded Ads</string>
@@ -20,4 +22,7 @@
     <string name="rewarded_ad_failed">Rewarded Ad Failed: </string>
     <string name="splash_ad_failed">Splash Ad Failed: </string>
     <string name="earned_reward_score">"Earned Reward(score): "</string>
+
+    // Map Kit and Location Kit
+    <string name="map_screen">MAP SCREEN</string>
 </resources>
