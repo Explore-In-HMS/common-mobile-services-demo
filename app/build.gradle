@@ -23,6 +23,10 @@ android {
     }
 
     buildTypes {
+        debug {
+            resValue "string", "API_KEY_HMS_MAP", "\"***Your Api Key***\""
+            manifestPlaceholders = [API_KEY_GMS_MAP: "***Your Api Key***"]
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
