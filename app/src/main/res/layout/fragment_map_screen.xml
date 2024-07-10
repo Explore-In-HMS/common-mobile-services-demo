@@ -7,7 +7,7 @@
     tools:context=".ui.map.MapScreen">
 
     <TextView
-        android:id="@+id/tvAdsTitle"
+        android:id="@+id/tvMapTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -18,5 +18,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.hms.lib.commonmobileservices.mapkit.CommonMapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:hms_api_key="@string/API_KEY_HMS_MAP"
+        app:layout_constraintTop_toBottomOf="@id/tvMapTitle"
+        android:layout_margin="10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
