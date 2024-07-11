@@ -12,11 +12,15 @@
     <string name="banner_ad_closed">Banner Ad Closed!</string>
     <string name="interstitial_ad_loading">Interstitial Ad Loading…</string>
     <string name="rewarded_ad_loading">Rewarded Ad Loading…</string>
+    <string name="splash_ad_loading">Splash Ad Loading…</string>
     <string name="show_interstitial_ad">Show Interstitial Ad</string>
+    <string name="show_splash_ad">Show Splash Ad</string>
     <string name="interstitial_ad_loaded">Interstitial Ad Loaded!</string>
     <string name="rewarded_ad_loaded">Rewarded Ad Loaded!</string>
+    <string name="splash_ad_loaded">Splash Ad Loaded!</string>
     <string name="interstitial_ad_failed">Interstitial Ad Failed: </string>
     <string name="rewarded_ad_failed">Rewarded Ad Failed: </string>
+    <string name="splash_ad_failed">Splash Ad Failed: </string>
     <string name="earned_reward_score">"Earned Reward(score): "</string>
 
     // Map Kit and Location Kit

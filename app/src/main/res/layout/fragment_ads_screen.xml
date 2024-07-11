@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".ui.ads.AdsScreen">
 
+    <com.huawei.hms.ads.splash.SplashView
+        android:id="@+id/hw_splash_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.huawei.hms.ads.banner.BannerView
         android:id="@+id/hw_banner_view"
         android:layout_width="match_parent"
@@ -73,6 +84,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnRewardedAds" />
 
+        <Button
+            android:id="@+id/btnSplashAds"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/show_splash_ad"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnInterstitialAds" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ProgressBar
