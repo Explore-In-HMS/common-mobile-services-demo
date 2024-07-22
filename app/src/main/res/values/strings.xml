@@ -25,4 +25,20 @@
 
     // Map Kit and Location Kit
     <string name="map_screen">MAP SCREEN</string>
+    <string name="gps_enabled">GPS Enabled</string>
+    <string name="gps_enabling_failed">"GPS Enabling Failed "</string>
+    <string name="gps_enabling_cancelled">GPS Enabling Cancelled</string>
+    <string name="request_location_updates_is_successful">Request location updates is successful!</string>
+    <string name="marker">Marker</string>
+    <string name="snippet">Snippet</string>
+    <string name="latitude">"Latitude: "</string>
+    <string name="longitude">"Longitude: "</string>
+    <string name="failed_to_get_last_known_location">Failed to get last known location</string>
+    <string name="location_unavailable_last_location">LOCATION_UNAVAILABLE_last_location</string>
+    <string name="gps_disabled_last_location">GPS_DISABLED_last_location</string>
+    <string name="no_last_location_last_location">NO_LAST_LOCATION_last_location</string>
+    <string name="failed_to_request_location_updates">Failed to request location updates</string>
+    <string name="location_unavailable_location_updates">LOCATION_UNAVAILABLE_location_updates</string>
+    <string name="gps_disabled_location_updates">GPS_DISABLED_location_updates</string>
+    <string name="no_last_location_location_updates">NO_LAST_LOCATION_location_updates</string>
 </resources>
