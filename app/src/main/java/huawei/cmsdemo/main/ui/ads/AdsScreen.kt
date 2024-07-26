@@ -149,7 +149,7 @@ class AdsScreen : Fragment() {
 
     private fun showInterstitialAd() {
         showProgress()
-        requireContext().toastLong(getString(R.string.interstitial_ad_loading))
+        requireContext().toastShort(msg = getString(R.string.interstitial_ad_loading))
 
         InterstitialAd.load(
             context = requireContext(),
