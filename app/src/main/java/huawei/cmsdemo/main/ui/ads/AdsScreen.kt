@@ -115,9 +115,7 @@ class AdsScreen : Fragment() {
 
     private fun showRewardedAd() {
         showProgress()
-        requireContext().toastLong(getString(R.string.rewarded_ad_loading))
-        val adRequest = AdManagerAdRequest.Builder().build()
-        val adParam = AdParam.Builder().build()
+        requireContext().toastShort(getString(R.string.rewarded_ad_loading))
 
         RewardedAd.load(
             requireContext(),
@@ -141,9 +139,7 @@ class AdsScreen : Fragment() {
                         }
                     })
                 }
-            },
-            adRequest,
-            adParam
+            }
         )
     }
 
