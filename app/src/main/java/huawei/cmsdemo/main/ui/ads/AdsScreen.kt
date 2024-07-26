@@ -118,10 +118,10 @@ class AdsScreen : Fragment() {
         requireContext().toastShort(getString(R.string.rewarded_ad_loading))
 
         RewardedAd.load(
-            requireContext(),
-            HMS_AD_ID_REWARDED,
-            GMS_AD_ID_REWARDED,
-            object : RewardedAdLoadCallback {
+            context = requireContext(),
+            hmsAdUnitId = HMS_AD_ID_REWARDED,
+            gmsAdUnitId = GMS_AD_ID_REWARDED,
+            callback = object : RewardedAdLoadCallback {
                 override fun onAdLoadFailed(adError: String) {
                     hideProgress()
                     requireContext().toastShort(getString(R.string.rewarded_ad_failed) + adError)
