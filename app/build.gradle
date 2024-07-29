@@ -26,6 +26,8 @@ android {
         debug {
             resValue "string", "API_KEY_HMS_MAP", "\"***Your Api Key***\""
             manifestPlaceholders = [API_KEY_GMS_MAP: "***Your Api Key***"]
+            resValue "string", "HMS_AD_ID_SPLASH", "testq6zq98hecj"
+            resValue "string", "GMS_AD_ID_SPLASH", "ca-app-pub-3940256099942544/9257395921"
         }
         release {
             minifyEnabled false
