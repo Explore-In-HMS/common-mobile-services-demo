@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import com.hms.lib.commonmobileservices.ads.banner.common.BannerAdLoadCallback
+import com.hms.lib.commonmobileservices.ads.banner.implementation.IBannerAd
 import com.hms.lib.commonmobileservices.ads.interstitial.InterstitialAd
 import com.hms.lib.commonmobileservices.ads.interstitial.common.InterstitialAdLoadCallback
 import com.hms.lib.commonmobileservices.ads.interstitial.implementation.IInterstitialAd
@@ -16,11 +18,8 @@ import com.hms.lib.commonmobileservices.ads.rewarded.common.IRewardItem
 import com.hms.lib.commonmobileservices.ads.rewarded.common.RewardedAdLoadCallback
 import com.hms.lib.commonmobileservices.ads.rewarded.common.UserRewardEarnedListener
 import com.hms.lib.commonmobileservices.ads.rewarded.implementation.IRewardedAd
-import com.hms.lib.commonmobileservices.ads.splash.SplashAd
 import com.hms.lib.commonmobileservices.ads.splash.common.SplashAdLoadCallback
 import com.hms.lib.commonmobileservices.ads.splash.implementation.ISplashAd
-import com.huawei.hms.ads.AdListener
-import com.huawei.hms.ads.AdParam
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentAdsScreenBinding
 import huawei.cmsdemo.main.util.Constants.GMS_AD_ID_INTERSTITIAL
@@ -81,17 +80,16 @@ class AdsScreen : Fragment() {
     }
 
     private fun showBannerAd() {
-        showProgress()
         val bannerView = binding.cvBannerAd
+        requireContext().toastShort(getString(R.string.banner_ad_loading))
+
         bannerView.initialize(
-            object: BannerAdLoadCallback{
+            object : BannerAdLoadCallback {
                 override fun onAdLoadFailed(adError: String) {
-                    hideProgress()
                     requireContext().toastShort(getString(R.string.banner_ad_failed))
                 }
 
                 override fun onBannerAdLoaded(bannerAd: IBannerAd) {
-                    hideProgress()
                     requireContext().toastShort(getString(R.string.banner_ad_loaded))
                 }
             }
