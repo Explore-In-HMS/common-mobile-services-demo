@@ -6,28 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.ads.AdsScreen">
 
-    <com.huawei.hms.ads.splash.SplashView
-        android:id="@+id/hw_splash_view"
+    <com.hms.lib.commonmobileservices.ads.banner.CommonBannerAdView
+        android:id="@+id/cvBannerAd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.huawei.hms.ads.banner.BannerView
-        android:id="@+id/hw_banner_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        app:adId="testw6vs28auh3"
-        app:bannerSize="BANNER_SIZE_SMART"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:hms_ad_unit_id="testw6vs28auh3"
+        app:gms_ad_unit_id="ca-app-pub-3940256099942544/6300978111"
+        app:ad_size="banner"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/clMainView"
