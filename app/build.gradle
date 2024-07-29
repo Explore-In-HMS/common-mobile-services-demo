@@ -28,6 +28,8 @@ android {
             manifestPlaceholders = [API_KEY_GMS_MAP: "***Your Api Key***"]
             resValue "string", "HMS_AD_ID_SPLASH", "testq6zq98hecj"
             resValue "string", "GMS_AD_ID_SPLASH", "ca-app-pub-3940256099942544/9257395921"
+            resValue "string", "HMS_AD_ID_BANNER", "testw6vs28auh3"
+            resValue "string", "GMS_AD_ID_BANNER", "ca-app-pub-3940256099942544/6300978111"
         }
         release {
             minifyEnabled false
