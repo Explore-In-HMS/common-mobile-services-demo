@@ -1,13 +1,13 @@
 package huawei.cmsdemo.main.ui.ads
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import com.hms.lib.commonmobileservices.ads.banner.common.BannerAdLoadCallback
-import com.hms.lib.commonmobileservices.ads.banner.implementation.IBannerAd
 import com.hms.lib.commonmobileservices.ads.interstitial.InterstitialAd
 import com.hms.lib.commonmobileservices.ads.interstitial.common.InterstitialAdLoadCallback
 import com.hms.lib.commonmobileservices.ads.interstitial.implementation.IInterstitialAd
@@ -16,17 +16,17 @@ import com.hms.lib.commonmobileservices.ads.rewarded.common.IRewardItem
 import com.hms.lib.commonmobileservices.ads.rewarded.common.RewardedAdLoadCallback
 import com.hms.lib.commonmobileservices.ads.rewarded.common.UserRewardEarnedListener
 import com.hms.lib.commonmobileservices.ads.rewarded.implementation.IRewardedAd
+import com.hms.lib.commonmobileservices.ads.splash.SplashAd
 import com.hms.lib.commonmobileservices.ads.splash.common.SplashAdLoadCallback
 import com.hms.lib.commonmobileservices.ads.splash.implementation.ISplashAd
+import com.huawei.hms.ads.AdListener
+import com.huawei.hms.ads.AdParam
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentAdsScreenBinding
 import huawei.cmsdemo.main.util.Constants.GMS_AD_ID_INTERSTITIAL
 import huawei.cmsdemo.main.util.Constants.GMS_AD_ID_REWARDED
-import huawei.cmsdemo.main.util.Constants.GMS_AD_ID_SPLASH
 import huawei.cmsdemo.main.util.Constants.HMS_AD_ID_INTERSTITIAL
 import huawei.cmsdemo.main.util.Constants.HMS_AD_ID_REWARDED
-import huawei.cmsdemo.main.util.Constants.HMS_AD_ID_SPLASH
-import huawei.cmsdemo.main.util.toastLong
 import huawei.cmsdemo.main.util.toastShort
 
 class AdsScreen : Fragment() {
@@ -53,6 +53,7 @@ class AdsScreen : Fragment() {
             btnInterstitialAds.setOnClickListener {
                 showInterstitialAd()
             }
+
             btnSplashAds.setOnClickListener {
                 showSplashAd()
             }
@@ -61,31 +62,22 @@ class AdsScreen : Fragment() {
 
     private fun showSplashAd() {
         showProgress()
-        requireContext().toastLong(getString(R.string.splash_ad_loading))
-        val adParam = AdParam.Builder().build()
-        val splashView = binding.hwSplashView
-        SplashAd.load(
-            requireContext(),
-            HMS_AD_ID_SPLASH,
-            GMS_AD_ID_SPLASH,
-            splashView,
-            0,
-            object : SplashAdLoadCallback {
-                override fun onAdLoadFailed(adError: String) {
-                    hideProgress()
-                    requireContext().toastShort(getString(R.string.splash_ad_failed) + adError)
-                }
+        requireContext().toastShort(msg = getString(R.string.splash_ad_loading))
 
-                override fun onSplashAdLoaded(splashAd: ISplashAd) {
-                    hideProgress()
-                    requireContext().toastShort(getString(R.string.splash_ad_loaded))
-                    splashAd.show(requireActivity())
-                }
+        val splashAdView = binding.hwSplashView
+        splashAdView.load(callback = object : SplashAdLoadCallback {
+            override fun onAdLoadFailed(adError: String) {
+                binding.progressBar.visibility = View.GONE
+                requireContext().toastShort(getString(R.string.splash_ad_failed) + adError)
+            }
 
-            },
-            adParam
-        )
-
+            override fun onSplashAdLoaded(splashAd: ISplashAd) {
+                binding.progressBar.visibility = View.GONE
+                requireContext().toastShort(getString(R.string.splash_ad_loaded))
+                splashAd.show(requireActivity())
+                simulateAdDismissal()
+            }
+        })
     }
 
     private fun showBannerAd() {
@@ -156,6 +148,12 @@ class AdsScreen : Fragment() {
                     interstitialAd.show(requireActivity())
                 }
             })
+    }
+
+    private fun simulateAdDismissal() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.clMainView.visibility = View.VISIBLE // Restore UI visibility after ad dismissal
+        }, 3000) // 3000 milliseconds = 3 seconds
     }
 
     private fun showProgress() {

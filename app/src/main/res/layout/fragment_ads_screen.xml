@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.ads.AdsScreen">
 
+
+    <com.hms.lib.commonmobileservices.ads.splash.CommonSplashAdView
+        android:id="@+id/hw_splash_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:gms_splash_ad_unit_id="@string/GMS_AD_ID_SPLASH"
+        app:hms_splash_ad_unit_id="@string/HMS_AD_ID_SPLASH"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.hms.lib.commonmobileservices.ads.banner.CommonBannerAdView
         android:id="@+id/cvBannerAd"
         android:layout_width="match_parent"
