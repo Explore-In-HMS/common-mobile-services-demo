@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import com.hms.lib.commonmobileservices.ads.banner.common.BannerAdLoadCallback
+import com.hms.lib.commonmobileservices.ads.banner.implementation.IBannerAd
 import com.hms.lib.commonmobileservices.ads.interstitial.InterstitialAd
 import com.hms.lib.commonmobileservices.ads.interstitial.common.InterstitialAdLoadCallback
 import com.hms.lib.commonmobileservices.ads.interstitial.implementation.IInterstitialAd
@@ -78,26 +80,20 @@ class AdsScreen : Fragment() {
     }
 
     private fun showBannerAd() {
-        val bannerView = binding.hwBannerView
-        val adParam = AdParam.Builder().build()
-        bannerView.loadAd(adParam)
+        val bannerView = binding.cvBannerAd
+        requireContext().toastShort(getString(R.string.banner_ad_loading))
 
-        val adListener: AdListener = object : AdListener() {
-            override fun onAdLoaded() {
-                requireContext().toastShort(getString(R.string.banner_ad_loaded))
+        bannerView.initialize(
+            object : BannerAdLoadCallback {
+                override fun onAdLoadFailed(adError: String) {
+                    requireContext().toastShort(getString(R.string.banner_ad_failed))
+                }
+
+                override fun onBannerAdLoaded(bannerAd: IBannerAd) {
+                    requireContext().toastShort(getString(R.string.banner_ad_loaded))
+                }
             }
-
-            override fun onAdFailed(errorCode: Int) {
-                requireContext().toastShort(getString(R.string.banner_ad_failed) + errorCode)
-            }
-
-            override fun onAdClosed() {
-                bannerView.destroy()
-                requireContext().toastShort(getString(R.string.banner_ad_closed))
-            }
-        }
-
-        bannerView.adListener = adListener
+        )
     }
 
     private fun showRewardedAd() {

@@ -9,7 +9,7 @@
     <string name="show_banner_ad">Show Banner Ad</string>
     <string name="banner_ad_loaded">Banner Ad Loaded!</string>
     <string name="banner_ad_failed">Banner Ad Failed: </string>
-    <string name="banner_ad_closed">Banner Ad Closed!</string>
+    <string name="banner_ad_loading">Banner Ad Loading…</string>
     <string name="interstitial_ad_loading">Interstitial Ad Loading…</string>
     <string name="rewarded_ad_loading">Rewarded Ad Loading…</string>
     <string name="splash_ad_loading">Splash Ad Loading…</string>
