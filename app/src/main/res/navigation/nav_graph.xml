@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeScreen_to_mapScreen"
             app:destination="@id/mapScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_accountScreen"
+            app:destination="@id/accountScreen" />
     </fragment>
     <fragment
         android:id="@+id/adsScreen"
@@ -27,4 +30,9 @@
         android:name="huawei.cmsdemo.main.ui.map.MapScreen"
         android:label="fragment_map_screen"
         tools:layout="@layout/fragment_map_screen" />
+    <fragment
+        android:id="@+id/accountScreen"
+        android:name="huawei.cmsdemo.main.ui.account.AccountScreen"
+        android:label="fragment_account_screen"
+        tools:layout="@layout/fragment_account_screen" />
 </navigation>
