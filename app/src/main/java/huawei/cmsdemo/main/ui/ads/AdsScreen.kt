@@ -26,6 +26,8 @@ import huawei.cmsdemo.main.util.Constants.GMS_AD_ID_INTERSTITIAL
 import huawei.cmsdemo.main.util.Constants.GMS_AD_ID_REWARDED
 import huawei.cmsdemo.main.util.Constants.HMS_AD_ID_INTERSTITIAL
 import huawei.cmsdemo.main.util.Constants.HMS_AD_ID_REWARDED
+import huawei.cmsdemo.main.util.Util
+import huawei.cmsdemo.main.util.showAlertDialog
 import huawei.cmsdemo.main.util.toastShort
 
 class AdsScreen : Fragment() {
@@ -35,6 +37,15 @@ class AdsScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAdsScreenBinding.inflate(inflater)
+        val servicesInfo = Util.servicesInfoList.first { it.servicesName == getString(R.string.ads_kit) }
+        with(servicesInfo) {
+            requireContext().showAlertDialog(
+                title = servicesName,
+                desc = desc,
+                versions = version
+            )
+        }
+
         initUI()
         return binding.root
     }
