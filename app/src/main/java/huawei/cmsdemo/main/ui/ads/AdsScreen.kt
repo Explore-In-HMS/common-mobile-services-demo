@@ -37,7 +37,15 @@ class AdsScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentAdsScreenBinding.inflate(inflater)
-        val servicesInfo = Util.servicesInfoList.first { it.servicesName == getString(R.string.ads_kit) }
+        showAlertDialog()
+
+        initUI()
+        return binding.root
+    }
+
+    private fun showAlertDialog() {
+        val servicesInfo =
+            Util.servicesInfoList.first { it.servicesName == getString(R.string.ads_kit) }
         with(servicesInfo) {
             requireContext().showAlertDialog(
                 title = servicesName,
@@ -45,9 +53,6 @@ class AdsScreen : Fragment() {
                 versions = version
             )
         }
-
-        initUI()
-        return binding.root
     }
 
     private fun initUI() {

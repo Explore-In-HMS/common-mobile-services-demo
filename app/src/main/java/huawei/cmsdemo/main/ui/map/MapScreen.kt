@@ -26,7 +26,16 @@ class MapScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMapScreenBinding.inflate(inflater)
-        val servicesInfo = Util.servicesInfoList.first { it.servicesName == getString(R.string.map_location_kit) }
+        showAlertDialog()
+        mapView = binding.mapView.onCreate(savedInstanceState, lifecycle)
+        initLocation()
+        // Inflate the layout for this fragment
+        return binding.root
+    }
+
+    private fun showAlertDialog() {
+        val servicesInfo =
+            Util.servicesInfoList.first { it.servicesName == getString(R.string.map_location_kit) }
         with(servicesInfo) {
             requireContext().showAlertDialog(
                 title = servicesName,
@@ -34,10 +43,6 @@ class MapScreen : Fragment() {
                 versions = version
             )
         }
-        mapView = binding.mapView.onCreate(savedInstanceState, lifecycle)
-        initLocation()
-        // Inflate the layout for this fragment
-        return binding.root
     }
 
     private fun initMap(latitude: Double, longitude: Double) {

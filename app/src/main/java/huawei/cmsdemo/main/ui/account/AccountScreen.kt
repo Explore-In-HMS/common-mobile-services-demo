@@ -14,7 +14,14 @@ class AccountScreen : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val servicesInfo = Util.servicesInfoList.first { it.servicesName == getString(R.string.account_kit) }
+        showAlertDialog()
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_account_screen, container, false)
+    }
+
+    private fun showAlertDialog() {
+        val servicesInfo =
+            Util.servicesInfoList.first { it.servicesName == getString(R.string.account_kit) }
         with(servicesInfo) {
             requireContext().showAlertDialog(
                 title = servicesName,
@@ -22,7 +29,5 @@ class AccountScreen : Fragment() {
                 versions = version
             )
         }
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account_screen, container, false)
     }
 }
