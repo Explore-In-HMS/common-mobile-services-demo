@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">CMS Demo</string>
     <string name="welcome_cms_demo_project">Welcome CMS Demo Project</string>
+    <string name="ok">OK</string>
 
     // Ads Kit
     <string name="ads_screen">ADS SCREEN</string>
@@ -22,6 +23,7 @@
     <string name="rewarded_ad_failed">Rewarded Ad Failed: </string>
     <string name="splash_ad_failed">Splash Ad Failed: </string>
     <string name="earned_reward_score">"Earned Reward(score): "</string>
+    <string name="ads_kit">Ads Kit</string>
 
     // Map Kit and Location Kit
     <string name="map_screen">MAP SCREEN</string>
@@ -41,5 +43,9 @@
     <string name="location_unavailable_location_updates">LOCATION_UNAVAILABLE_location_updates</string>
     <string name="gps_disabled_location_updates">GPS_DISABLED_location_updates</string>
     <string name="no_last_location_location_updates">NO_LAST_LOCATION_location_updates</string>
+    <string name="map_location_kit"><![CDATA[Map & Location Kit]]></string>
+
+    // Account Kit
     <string name="account_screen">ACCOUNT SCREEN</string>
+    <string name="account_kit">Account Kit</string>
 </resources>
