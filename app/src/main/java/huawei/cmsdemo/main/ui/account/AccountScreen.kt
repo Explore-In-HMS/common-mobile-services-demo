@@ -41,7 +41,7 @@ class AccountScreen : Fragment() {
             signIn()
         }
 
-        binding.button.setOnClickListener {
+        binding.signOutButton.setOnClickListener {
             signOut()
         }
     }
