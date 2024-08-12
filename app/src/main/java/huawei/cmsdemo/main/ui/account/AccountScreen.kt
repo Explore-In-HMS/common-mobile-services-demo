@@ -23,8 +23,9 @@ class AccountScreen : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-   ): View {
+    ): View {
         binding = FragmentAccountScreenBinding.inflate(inflater, container, false)
+        showAlertDialog()
         initializeAccountService()
         return binding.root
     }
@@ -40,11 +41,9 @@ class AccountScreen : Fragment() {
             )
         }
     }
-}
 
 
     private fun initializeAccountService() {
-        // Initialize AccountService
         accountService = AccountService.Factory.create(
             requireContext(),
             SignInParams.Builder()
@@ -52,8 +51,6 @@ class AccountScreen : Fragment() {
                 .create()
         )
 
-
-        // Setup sign-in button
         binding.huaweiSignInButton.setSignInButtonClickListener {
             signIn()
         }
@@ -67,17 +64,23 @@ class AccountScreen : Fragment() {
         accountService.silentSignIn(object : ResultCallback<SignInUser> {
             override fun onSuccess(result: SignInUser?) {
                 if (result != null) {
-                    requireContext().toastShort(msg = "Signed in as HUAWEI: ${result.id} ${result.email} ${result.givenName}}")
-
+                    requireContext().toastShort(
+                        msg = getString(
+                            R.string.signed_in_as,
+                            result.id,
+                            result.email,
+                            result.givenName
+                        )
+                    )
                 }
             }
 
             override fun onFailure(error: Exception) {
-                requireContext().toastShort(msg = "Sign-in failed HUAWEI: ${error.message}")
+                requireContext().toastShort(msg = getString(R.string.sign_in_failed, error.message))
             }
 
             override fun onCancelled() {
-                requireContext().toastShort(msg = "Cancelled")
+                requireContext().toastShort(msg = getString(R.string.sign_in_cancelled))
             }
         })
 
@@ -92,20 +95,27 @@ class AccountScreen : Fragment() {
         if (requestCode == REQUEST_CODE && data != null) {
             accountService.onSignInActivityResult(data, object : ResultCallback<SignInUser> {
                 override fun onSuccess(result: SignInUser?) {
-                    // Handle success
                     result?.let {
-                        requireContext().toastShort(msg = "Signed in as activity result: ${it.email}")
+                        requireContext().toastShort(
+                            msg = getString(
+                                R.string.signed_in_as_activity_result,
+                                it.email
+                            )
+                        )
                     }
                 }
 
                 override fun onFailure(error: Exception) {
-                    // Handle failure
-                    requireContext().toastShort(msg = "Sign-in failed activity result: ${error.message}")
+                    requireContext().toastShort(
+                        msg = getString(
+                            R.string.sign_in_failed_activity_result,
+                            error.message
+                        )
+                    )
                 }
 
                 override fun onCancelled() {
-                    // Handle cancellation
-                    requireContext().toastShort(msg = "Sign-in cancelled activity result")
+                    requireContext().toastShort(msg = getString(R.string.sign_in_cancelled_activity_result))
                 }
             })
         }
@@ -114,16 +124,13 @@ class AccountScreen : Fragment() {
     private fun signOut() {
         accountService.signOut()
             .addOnSuccessListener {
-                // Handle successful sign-out
-                requireContext().toastShort(msg = "Signed out")
+                requireContext().toastShort(msg = getString(R.string.signed_out))
             }
             .addOnFailureListener {
-                // Handle sign-out failure
-                requireContext().toastShort(msg =  "Sign-out failed: ${it.message}")
+                requireContext().toastShort(msg = getString(R.string.sign_out_failed, it.message))
             }
             .addOnCanceledListener {
-                // Handle sign-out cancellation
-                requireContext().toastShort(msg = "Sign-out cancelled")
+                requireContext().toastShort(msg = getString(R.string.sign_out_cancelled))
             }
     }
 
