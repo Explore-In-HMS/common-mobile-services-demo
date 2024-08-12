@@ -12,6 +12,8 @@ import com.hms.lib.commonmobileservices.location.model.LocationResultState
 import com.hms.lib.commonmobileservices.mapkit.factory.CommonMap
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentMapScreenBinding
+import huawei.cmsdemo.main.util.Util
+import huawei.cmsdemo.main.util.showAlertDialog
 import huawei.cmsdemo.main.util.toastShort
 
 class MapScreen : Fragment() {
@@ -24,11 +26,23 @@ class MapScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentMapScreenBinding.inflate(inflater)
-
+        showAlertDialog()
         mapView = binding.mapView.onCreate(savedInstanceState, lifecycle)
         initLocation()
         // Inflate the layout for this fragment
         return binding.root
+    }
+
+    private fun showAlertDialog() {
+        val servicesInfo =
+            Util.servicesInfoList.first { it.servicesName == getString(R.string.map_location_kit) }
+        with(servicesInfo) {
+            requireContext().showAlertDialog(
+                title = servicesName,
+                desc = desc,
+                versions = version
+            )
+        }
     }
 
     private fun initMap(latitude: Double, longitude: Double) {
