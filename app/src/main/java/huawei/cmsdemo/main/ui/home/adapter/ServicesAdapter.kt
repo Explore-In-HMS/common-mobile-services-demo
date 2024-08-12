@@ -37,7 +37,6 @@ class ServicesAdapter(private val serviceList: List<ServicesInfo>, private val o
             val binding = ItemHomeMenuBinding.bind(itemView)
             with(binding) {
                 tvServiceName.text = service.servicesName
-                tvServiceVersion.text = service.version
                 Glide.with(itemView.context).load(service.imageUrl).into(ivServiceImage)
                 cvService.setOnClickListener {
                     onClick(adapterPosition)

@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import huawei.cmsdemo.main.R
+import huawei.cmsdemo.main.util.Util
+import huawei.cmsdemo.main.util.showAlertDialog
 import androidx.fragment.app.Fragment
 import com.hms.lib.commonmobileservices.account.AccountService
 import com.hms.lib.commonmobileservices.account.SignInParams
@@ -20,11 +23,25 @@ class AccountScreen : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+   ): View {
         binding = FragmentAccountScreenBinding.inflate(inflater, container, false)
         initializeAccountService()
         return binding.root
     }
+
+    private fun showAlertDialog() {
+        val servicesInfo =
+            Util.servicesInfoList.first { it.servicesName == getString(R.string.account_kit) }
+        with(servicesInfo) {
+            requireContext().showAlertDialog(
+                title = servicesName,
+                desc = desc,
+                versions = version
+            )
+        }
+    }
+}
+
 
     private fun initializeAccountService() {
         // Initialize AccountService

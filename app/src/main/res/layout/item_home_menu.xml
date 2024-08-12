@@ -36,18 +36,8 @@
             app:layout_constraintTop_toBottomOf="@id/ivServiceImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/tvServiceVersion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/welcome_cms_demo_project"
-            android:layout_marginTop="5dp"
-            app:layout_constraintTop_toBottomOf="@id/tvServiceName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="16sp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

@@ -6,20 +6,30 @@ import huawei.cmsdemo.main.data.model.ServicesInfo
 object Util {
     val servicesInfoList = listOf(
         ServicesInfo(
-            servicesName = "Push Kit",
-            version = "1.3.5",
-            imageUrl = "data:image/png;base64,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"
+            servicesName = "Account Kit",
+            version = "HMS: 6.12.0.300\nGMS: 21.2.0",
+            desc = "Allows users to sign in with either their Huawei ID or Google accounts.",
+            imageUrl = "https://cdn-icons-png.flaticon.com/128/709/709579.png",
+            navigationActionId = R.id.action_homeScreen_to_accountScreen
         ),
         ServicesInfo(
-            servicesName = "Map Kit",
-            version = "2.4.5",
+            servicesName = "Ads Kit",
+            version = "HMS: 3.4.72.300\nGMS: 22.3.0",
+            desc = "Enables developers to display ads in their applications, helping them generate revenue.",
+            imageUrl = "https://cdn-icons-png.flaticon.com/128/6317/6317510.png",
+            navigationActionId = R.id.action_homeScreen_to_adsScreen
+        ),
+        ServicesInfo(
+            servicesName = "Map & Location Kit",
+            version = "HMS: 6.11.2.301\nGMS: 19.0.0 \nHMS: 6.11.0.301\nGMS: 21.0.1",
+            desc = "Maps Kit allows you to add maps and location-based services to your application, Location Kit enables you to provide location-based services by determining users' real-time locations.",
             imageUrl = "https://cdn-icons-png.flaticon.com/128/1865/1865153.png",
             navigationActionId = R.id.action_homeScreen_to_mapScreen
         ),
         ServicesInfo(
-            servicesName = "Location Kit",
-            version = "2.4.5",
-            imageUrl = "https://cdn-icons-png.flaticon.com/128/684/684809.png"
+            servicesName = "Push Kit",
+            version = "1.3.5",
+            imageUrl = "https://cdn-icons-png.flaticon.com/128/3119/3119338.png"
         ),
         ServicesInfo(
             servicesName = "Analytics Kit",
@@ -27,21 +37,9 @@ object Util {
             imageUrl = "https://cdn-icons-png.flaticon.com/128/11738/11738555.png"
         ),
         ServicesInfo(
-            servicesName = "Account Kit",
-            version = "2.4.5",
-            imageUrl = "https://cdn-icons-png.flaticon.com/128/709/709579.png",
-            navigationActionId = R.id.action_homeScreen_to_accountScreen
-        ),
-        ServicesInfo(
             servicesName = "Auth Service",
             version = "2.4.5",
             imageUrl = "https://cdn-icons-png.flaticon.com/128/5048/5048687.png"
-        ),
-        ServicesInfo(
-            servicesName = "Ads Kit",
-            version = "2.4.5",
-            imageUrl = "https://cdn-icons-png.flaticon.com/128/6317/6317510.png",
-            navigationActionId = R.id.action_homeScreen_to_adsScreen
         ),
         ServicesInfo(
             servicesName = "Image Classification",
