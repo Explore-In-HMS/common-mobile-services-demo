@@ -6,12 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".ui.account.AccountScreen">
 
-    <TextView
+
+    <com.hms.lib.commonmobileservices.account.ui.SignInButton
+        android:id="@+id/huaweiSignInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/account_screen"
-        android:textAlignment="center"
+        android:layout_marginHorizontal="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/signOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="179dp"
+        android:layout_marginTop="537dp"
+        android:layout_marginEnd="138dp"
+        android:text="@string/sign_out"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
