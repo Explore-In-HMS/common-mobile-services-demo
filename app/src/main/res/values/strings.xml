@@ -42,4 +42,5 @@
     <string name="gps_disabled_location_updates">GPS_DISABLED_location_updates</string>
     <string name="no_last_location_location_updates">NO_LAST_LOCATION_location_updates</string>
     <string name="account_screen">ACCOUNT SCREEN</string>
+    <string name="sign_out">SIGN OUT</string>
 </resources>
