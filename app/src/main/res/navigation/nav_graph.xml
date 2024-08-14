@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeScreen_to_accountScreen"
             app:destination="@id/accountScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_authScreen"
+            app:destination="@id/authScreen" />
     </fragment>
     <fragment
         android:id="@+id/adsScreen"
@@ -35,4 +38,9 @@
         android:name="huawei.cmsdemo.main.ui.account.AccountScreen"
         android:label="fragment_account_screen"
         tools:layout="@layout/fragment_account_screen" />
+    <fragment
+        android:id="@+id/authScreen"
+        android:name="huawei.cmsdemo.main.ui.auth.AuthScreen"
+        android:label="fragment_auth_screen"
+        tools:layout="@layout/fragment_auth_screen" />
 </navigation>
