@@ -20,6 +20,13 @@ object Util {
             navigationActionId = R.id.action_homeScreen_to_adsScreen
         ),
         ServicesInfo(
+            servicesName = "Auth Service",
+            version = "HMS: 1.9.1.301\nGMS: 21.3.0",
+            desc = "Allows users to sign in using various authentication methods. Like Twitter, Phone, Email Sign In ... ",
+            imageUrl = "https://cdn-icons-png.flaticon.com/128/5048/5048687.png",
+            navigationActionId = R.id.action_homeScreen_to_authScreen
+        ),
+        ServicesInfo(
             servicesName = "Map & Location Kit",
             version = "HMS: 6.11.2.301\nGMS: 19.0.0 \nHMS: 6.11.0.301\nGMS: 21.0.1",
             desc = "Maps Kit allows you to add maps and location-based services to your application, Location Kit enables you to provide location-based services by determining users' real-time locations.",
@@ -35,11 +42,6 @@ object Util {
             servicesName = "Analytics Kit",
             version = "2.4.5",
             imageUrl = "https://cdn-icons-png.flaticon.com/128/11738/11738555.png"
-        ),
-        ServicesInfo(
-            servicesName = "Auth Service",
-            version = "2.4.5",
-            imageUrl = "https://cdn-icons-png.flaticon.com/128/5048/5048687.png"
         ),
         ServicesInfo(
             servicesName = "Image Classification",
