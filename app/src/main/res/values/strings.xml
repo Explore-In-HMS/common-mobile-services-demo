@@ -58,4 +58,8 @@
     <string name="please_sign_in_first">Please sign in first.</string>
     <string name="get_last_signed_account">Get Last Signed Account</string>
     <string name="id_email_name">"\n                    ID: %1$s\n                    Email: %2$s\n                    Name: %3$s\n                "</string>
+
+    // Auth Service
+    <string name="auth_screen">AUTH SCREEN</string>
+    <string name="auth_service">Auth Service</string>
 </resources>
