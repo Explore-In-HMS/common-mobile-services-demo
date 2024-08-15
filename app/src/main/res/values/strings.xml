@@ -58,4 +58,8 @@
     <string name="signed_in_as">Signed in as: %1$s %2$s %3$s}</string>
     <string name="sign_in_failed">Sign-in failed: %1$s</string>
     <string name="sign_in_cancelled">Sign-in cancelled</string>
+
+    // Auth Service
+    <string name="auth_screen">AUTH SCREEN</string>
+    <string name="auth_service">Auth Service</string>
 </resources>
