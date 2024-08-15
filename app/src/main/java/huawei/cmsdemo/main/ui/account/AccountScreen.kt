@@ -5,16 +5,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import huawei.cmsdemo.main.R
-import huawei.cmsdemo.main.util.Util
-import huawei.cmsdemo.main.util.showAlertDialog
 import androidx.fragment.app.Fragment
 import com.hms.lib.commonmobileservices.account.AccountService
 import com.hms.lib.commonmobileservices.account.SignInParams
 import com.hms.lib.commonmobileservices.account.SignInUser
 import com.hms.lib.commonmobileservices.core.ResultCallback
+import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentAccountScreenBinding
-import huawei.cmsdemo.main.util.toastShort
+import huawei.cmsdemo.main.util.Util
+import huawei.cmsdemo.main.util.showAlertDialog
 
 class AccountScreen : Fragment() {
     private lateinit var binding: FragmentAccountScreenBinding
@@ -42,7 +41,6 @@ class AccountScreen : Fragment() {
         }
     }
 
-
     private fun initializeAccountService() {
         accountService = AccountService.Factory.create(
             requireContext(),
@@ -51,42 +49,48 @@ class AccountScreen : Fragment() {
                 .create()
         )
 
-        binding.huaweiSignInButton.setSignInButtonClickListener {
+        binding.buttonSignIn.setSignInButtonClickListener {
             signIn()
         }
 
-        binding.signOutButton.setOnClickListener {
+        binding.buttonGetLastSignedAccount.setOnClickListener {
+            getLastSignedAccount()
+        }
+
+        binding.buttonSignOut.setOnClickListener {
             signOut()
         }
     }
 
     private fun signIn() {
+        accountService.getSignInIntent { intent ->
+            startActivityForResult(intent, REQUEST_CODE)
+        }
+    }
+
+    private fun getLastSignedAccount() {
         accountService.silentSignIn(object : ResultCallback<SignInUser> {
             override fun onSuccess(result: SignInUser?) {
                 if (result != null) {
-                    requireContext().toastShort(
-                        msg = getString(
-                            R.string.signed_in_as,
+                    val userInfoText =
+                        getString(
+                            R.string.id_email_name,
                             result.id,
                             result.email,
                             result.givenName
-                        )
-                    )
+                        ).trimIndent()
+                    binding.textViewAccountInfo.text = userInfoText
                 }
             }
 
             override fun onFailure(error: Exception) {
-                requireContext().toastShort(msg = getString(R.string.sign_in_failed, error.message))
+                binding.textViewAccountInfo.text = getString(R.string.please_sign_in_first)
             }
 
             override fun onCancelled() {
-                requireContext().toastShort(msg = getString(R.string.sign_in_cancelled))
+                binding.textViewAccountInfo.text = getString(R.string.sign_in_cancelled)
             }
         })
-
-        accountService.getSignInIntent { intent ->
-            startActivityForResult(intent, REQUEST_CODE)
-        }
     }
 
     @Deprecated("Deprecated in Java")
@@ -96,26 +100,27 @@ class AccountScreen : Fragment() {
             accountService.onSignInActivityResult(data, object : ResultCallback<SignInUser> {
                 override fun onSuccess(result: SignInUser?) {
                     result?.let {
-                        requireContext().toastShort(
-                            msg = getString(
-                                R.string.signed_in_as_activity_result,
-                                it.email
-                            )
-                        )
+                        val userInfoText =
+                            getString(
+                                R.string.id_email_name,
+                                result.id,
+                                result.email,
+                                result.givenName
+                            ).trimIndent()
+                        binding.textViewAccountInfo.text = userInfoText
                     }
                 }
 
                 override fun onFailure(error: Exception) {
-                    requireContext().toastShort(
-                        msg = getString(
-                            R.string.sign_in_failed_activity_result,
-                            error.message
-                        )
+                    binding.textViewAccountInfo.text = getString(
+                        R.string.sign_in_failed_activity_result,
+                        error.message
                     )
                 }
 
                 override fun onCancelled() {
-                    requireContext().toastShort(msg = getString(R.string.sign_in_cancelled_activity_result))
+                    binding.textViewAccountInfo.text =
+                        getString(R.string.sign_in_cancelled_activity_result)
                 }
             })
         }
@@ -124,13 +129,13 @@ class AccountScreen : Fragment() {
     private fun signOut() {
         accountService.signOut()
             .addOnSuccessListener {
-                requireContext().toastShort(msg = getString(R.string.signed_out))
+                binding.textViewAccountInfo.text = getString(R.string.signed_out)
             }
             .addOnFailureListener {
-                requireContext().toastShort(msg = getString(R.string.sign_out_failed, it.message))
+                binding.textViewAccountInfo.text = getString(R.string.sign_out_failed, it.message)
             }
             .addOnCanceledListener {
-                requireContext().toastShort(msg = getString(R.string.sign_out_cancelled))
+                binding.textViewAccountInfo.text = getString(R.string.sign_out_cancelled)
             }
     }
 
