@@ -54,10 +54,10 @@
     <string name="signed_out">Signed out</string>
     <string name="sign_in_cancelled_activity_result">Sign-in cancelled activity result</string>
     <string name="sign_in_failed_activity_result">Sign-in failed activity result: %1$s</string>
-    <string name="signed_in_as_activity_result">Signed in as activity result: %1$s</string>
-    <string name="signed_in_as">Signed in as: %1$s %2$s %3$s}</string>
-    <string name="sign_in_failed">Sign-in failed: %1$s</string>
     <string name="sign_in_cancelled">Sign-in cancelled</string>
+    <string name="please_sign_in_first">Please sign in first.</string>
+    <string name="get_last_signed_account">Get Last Signed Account</string>
+    <string name="id_email_name">"\n                    ID: %1$s\n                    Email: %2$s\n                    Name: %3$s\n                "</string>
 
     // Auth Service
     <string name="auth_screen">AUTH SCREEN</string>
