@@ -62,4 +62,7 @@
     // Auth Service
     <string name="auth_screen">AUTH SCREEN</string>
     <string name="auth_service">Auth Service</string>
+
+    // Translate Kit
+    <string name="translate_screen">TRANSLATE SCREEN</string>
 </resources>
