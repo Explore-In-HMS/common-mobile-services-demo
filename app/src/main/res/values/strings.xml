@@ -65,4 +65,5 @@
 
     // Translate Kit
     <string name="translate_screen">TRANSLATE SCREEN</string>
+    <string name="translate_kit">Translate Kit</string>
 </resources>
