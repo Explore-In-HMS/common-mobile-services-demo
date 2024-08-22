@@ -1,23 +1,27 @@
 package huawei.cmsdemo.main.ui.auth
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import huawei.cmsdemo.main.R
+import huawei.cmsdemo.main.databinding.FragmentAuthScreenBinding
 import huawei.cmsdemo.main.util.Util
 import huawei.cmsdemo.main.util.showAlertDialog
 
 class AuthScreen : Fragment() {
 
+    private lateinit var binding: FragmentAuthScreenBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        binding = FragmentAuthScreenBinding.inflate(inflater)
         showAlertDialog()
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_auth_screen, container, false)
+        initUI()
+        return binding.root
     }
 
     private fun showAlertDialog() {
@@ -32,4 +36,11 @@ class AuthScreen : Fragment() {
         }
     }
 
+    private fun initUI() {
+        with(binding) {
+            btnEmailPassword.setOnClickListener {
+                findNavController().navigate(R.id.action_authScreen_to_emailPasswordLogin)
+            }
+        }
+    }
 }
