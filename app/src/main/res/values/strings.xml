@@ -62,4 +62,19 @@
     // Auth Service
     <string name="auth_screen">AUTH SCREEN</string>
     <string name="auth_service">Auth Service</string>
+    <string name="email_and_password_can_t_be_blank">Email and Password can\'t be blank</string>
+    <string name="welcome_user_id">"Welcome %1$s!"</string>
+    <string name="welcome">Welcome!</string>
+    <string name="successfully_sign_in">SUCCESSFULLY Sign In!</string>
+    <string name="email_password">Email/Password</string>
+    <string name="huawei_google_id">Huawei/Google ID</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_your_account">Create your account!</string>
+    <string name="verification_code">Verification code</string>
+    <string name="successfully_signed_up">SUCCESSFULLY Signed Up!</string>
+    <string name="code_can_t_be_blank">Code can\'t be blank</string>
+    <string name="verify">Verify</string>
 </resources>
