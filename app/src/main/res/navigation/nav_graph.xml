@@ -42,5 +42,23 @@
         android:id="@+id/authScreen"
         android:name="huawei.cmsdemo.main.ui.auth.AuthScreen"
         android:label="fragment_auth_screen"
-        tools:layout="@layout/fragment_auth_screen" />
+        tools:layout="@layout/fragment_auth_screen" >
+        <action
+            android:id="@+id/action_authScreen_to_emailPasswordLogin"
+            app:destination="@id/emailPasswordLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpScreen"
+        android:name="huawei.cmsdemo.main.ui.auth.SignUpScreen"
+        android:label="fragment_sign_up_screen"
+        tools:layout="@layout/fragment_sign_up_screen" />
+    <fragment
+        android:id="@+id/emailPasswordLogin"
+        android:name="huawei.cmsdemo.main.ui.auth.EmailPasswordLogin"
+        android:label="fragment_email_password_login"
+        tools:layout="@layout/fragment_email_password_login" >
+        <action
+            android:id="@+id/action_emailPasswordLogin_to_signUpScreen"
+            app:destination="@id/signUpScreen" />
+    </fragment>
 </navigation>
