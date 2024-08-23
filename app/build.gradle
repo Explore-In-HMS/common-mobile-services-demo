@@ -86,4 +86,7 @@ dependencies {
 
     // Account Kit
     implementation 'com.github.Explore-In-HMS.common-mobile-services:account:3.0.3'
+
+    // Auth Service
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:auth:3.0.3'
 }
