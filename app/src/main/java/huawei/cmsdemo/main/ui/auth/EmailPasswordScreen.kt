@@ -11,7 +11,7 @@ import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentEmailPasswordLoginBinding
 import huawei.cmsdemo.main.util.toastShort
 
-class EmailPasswordLogin : Fragment() {
+class EmailPasswordScreen : Fragment() {
     private lateinit var authService: AuthService
     private lateinit var binding: FragmentEmailPasswordLoginBinding
     override fun onCreateView(

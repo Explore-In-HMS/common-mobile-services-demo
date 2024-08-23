@@ -57,7 +57,7 @@
         tools:layout="@layout/fragment_sign_up_screen" />
     <fragment
         android:id="@+id/emailPasswordLogin"
-        android:name="huawei.cmsdemo.main.ui.auth.EmailPasswordLogin"
+        android:name="huawei.cmsdemo.main.ui.auth.EmailPasswordScreen"
         android:label="fragment_email_password_login"
         tools:layout="@layout/fragment_email_password_login" >
         <action
