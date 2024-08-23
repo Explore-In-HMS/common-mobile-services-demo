@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_homeScreen_to_authScreen"
             app:destination="@id/authScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_translateScreen"
+            app:destination="@id/translateScreen" />
     </fragment>
     <fragment
         android:id="@+id/adsScreen"
@@ -61,4 +64,9 @@
             android:id="@+id/action_emailPasswordLogin_to_signUpScreen"
             app:destination="@id/signUpScreen" />
     </fragment>
+    <fragment
+        android:id="@+id/translateScreen"
+        android:name="huawei.cmsdemo.main.ui.translate.TranslateScreen"
+        android:label="fragment_translate_screen"
+        tools:layout="@layout/fragment_translate_screen" />
 </navigation>

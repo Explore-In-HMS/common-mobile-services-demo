@@ -77,4 +77,8 @@
     <string name="successfully_signed_up">SUCCESSFULLY Signed Up!</string>
     <string name="code_can_t_be_blank">Code can\'t be blank</string>
     <string name="verify">Verify</string>
+
+    // Translate Kit
+    <string name="translate_screen">TRANSLATE SCREEN</string>
+    <string name="translate_kit">Translate Kit</string>
 </resources>
