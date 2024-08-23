@@ -12,14 +12,14 @@ import com.hms.lib.commonmobileservices.auth.AuthService
 import com.hms.lib.commonmobileservices.auth.common.VerificationType
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentSignUpScreenBinding
-import huawei.cmsdemo.main.databinding.FragmentVerifyScreenBinding
+import huawei.cmsdemo.main.databinding.VerifyCodeDialogBinding
 import huawei.cmsdemo.main.util.toastShort
 
 
 class SignUpScreen : Fragment() {
     private lateinit var authService: AuthService
     private lateinit var binding: FragmentSignUpScreenBinding
-    private lateinit var bindingVerify: FragmentVerifyScreenBinding
+    private lateinit var bindingVerify: VerifyCodeDialogBinding
     private lateinit var email: String
     private lateinit var password: String
 
@@ -28,7 +28,7 @@ class SignUpScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         authService = AuthService.Factory.create(requireContext())
-        bindingVerify = FragmentVerifyScreenBinding.inflate(inflater)
+        bindingVerify = VerifyCodeDialogBinding.inflate(inflater)
         binding = FragmentSignUpScreenBinding.inflate(inflater)
         initUI()
         return binding.root
