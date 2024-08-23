@@ -34,6 +34,13 @@ object Util {
             navigationActionId = R.id.action_homeScreen_to_mapScreen
         ),
         ServicesInfo(
+            servicesName = "Translate Kit",
+            version = "2.4.5",
+            desc = "Translate Kit with the support of an on-device model, the on-device translation service can translate text from the source language into the target language.",
+            imageUrl = "https://cdn-icons-png.flaticon.com/128/4534/4534766.png",
+            navigationActionId = R.id.action_homeScreen_to_translateScreen
+        ),
+        ServicesInfo(
             servicesName = "Push Kit",
             version = "1.3.5",
             imageUrl = "https://cdn-icons-png.flaticon.com/128/3119/3119338.png"
@@ -82,11 +89,6 @@ object Util {
             servicesName = "Scan Kit",
             version = "2.4.5",
             imageUrl = "https://cdn-icons-png.flaticon.com/128/7463/7463734.png"
-        ),
-        ServicesInfo(
-            servicesName = "Translate Kit",
-            version = "2.4.5",
-            imageUrl = "https://cdn-icons-png.flaticon.com/128/4534/4534766.png"
         ),
         ServicesInfo(
             servicesName = "Speech To Text",
