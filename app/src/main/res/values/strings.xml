@@ -81,4 +81,8 @@
     // Translate Kit
     <string name="translate_screen">TRANSLATE SCREEN</string>
     <string name="translate_kit">Translate Kit</string>
+
+    // Credit Card Scanner
+    <string name="credit_card_scanner">Credit Card Scanner</string>
+    <string name="credit_card_scanner_screen">CREDIT CARD SCANNER SCREEN</string>
 </resources>
