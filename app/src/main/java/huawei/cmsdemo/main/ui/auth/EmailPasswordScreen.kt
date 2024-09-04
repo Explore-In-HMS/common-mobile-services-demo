@@ -10,15 +10,16 @@ import com.hms.lib.commonmobileservices.auth.AuthService
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentEmailPasswordLoginBinding
 import huawei.cmsdemo.main.util.toastShort
+import javax.inject.Inject
 
 class EmailPasswordScreen : Fragment() {
-    private lateinit var authService: AuthService
+    @Inject
+    lateinit var authService: AuthService
     private lateinit var binding: FragmentEmailPasswordLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        authService = AuthService.Factory.create(requireContext())
         binding = FragmentEmailPasswordLoginBinding.inflate(inflater)
         initUI()
         checkUser()
