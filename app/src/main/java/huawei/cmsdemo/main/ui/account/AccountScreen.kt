@@ -7,17 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.hms.lib.commonmobileservices.account.AccountService
-import com.hms.lib.commonmobileservices.account.SignInParams
 import com.hms.lib.commonmobileservices.account.SignInUser
 import com.hms.lib.commonmobileservices.core.ResultCallback
+import dagger.hilt.android.AndroidEntryPoint
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentAccountScreenBinding
 import huawei.cmsdemo.main.util.Util
 import huawei.cmsdemo.main.util.showAlertDialog
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class AccountScreen : Fragment() {
     private lateinit var binding: FragmentAccountScreenBinding
-    private lateinit var accountService: AccountService
+
+    @Inject
+    lateinit var accountService: AccountService
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,13 +46,6 @@ class AccountScreen : Fragment() {
     }
 
     private fun initializeAccountService() {
-        accountService = AccountService.Factory.create(
-            requireContext(),
-            SignInParams.Builder()
-                .requestEmail()
-                .create()
-        )
-
         binding.buttonSignIn.setSignInButtonClickListener {
             signIn()
         }
