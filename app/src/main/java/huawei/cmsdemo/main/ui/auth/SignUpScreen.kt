@@ -10,13 +10,14 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.hms.lib.commonmobileservices.auth.AuthService
 import com.hms.lib.commonmobileservices.auth.common.VerificationType
+import dagger.hilt.android.AndroidEntryPoint
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentSignUpScreenBinding
 import huawei.cmsdemo.main.databinding.VerifyCodeDialogBinding
 import huawei.cmsdemo.main.util.toastShort
 import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class SignUpScreen : Fragment() {
     @Inject
     lateinit var authService: AuthService

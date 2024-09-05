@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.hms.lib.commonmobileservices.auth.AuthService
+import dagger.hilt.android.AndroidEntryPoint
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentEmailPasswordLoginBinding
 import huawei.cmsdemo.main.util.toastShort
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class EmailPasswordScreen : Fragment() {
     @Inject
     lateinit var authService: AuthService
