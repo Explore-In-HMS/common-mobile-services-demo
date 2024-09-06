@@ -12,7 +12,6 @@ import huawei.cmsdemo.main.util.Util
 import huawei.cmsdemo.main.util.showAlertDialog
 
 class AuthScreen : Fragment() {
-
     private lateinit var binding: FragmentAuthScreenBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,6 +39,9 @@ class AuthScreen : Fragment() {
         with(binding) {
             btnEmailPassword.setOnClickListener {
                 findNavController().navigate(R.id.action_authScreen_to_emailPasswordLogin)
+            }
+            btnPhoneSignIn.setOnClickListener {
+                findNavController().navigate(R.id.action_authScreen_to_phoneSignInScreen)
             }
         }
     }
