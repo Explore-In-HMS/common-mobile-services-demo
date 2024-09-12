@@ -89,4 +89,7 @@ dependencies {
 
     // Auth Service
     implementation 'com.github.Explore-In-HMS.common-mobile-services:auth:3.0.3'
+
+    // Translate
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:translate:3.0.3'
 }
