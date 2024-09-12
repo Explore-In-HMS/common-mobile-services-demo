@@ -76,20 +76,20 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.45"
 
     // Ads
-    implementation 'com.github.Explore-In-HMS.common-mobile-services:ads:3.0.3'
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:ads:3.0.4'
 
     // Map
-    implementation 'com.github.Explore-In-HMS.common-mobile-services:mapkit:3.0.3'
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:mapkit:3.0.4'
 
     // Location
-    implementation 'com.github.Explore-In-HMS.common-mobile-services:location:3.0.3'
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:location:3.0.4'
 
     // Account Kit
-    implementation 'com.github.Explore-In-HMS.common-mobile-services:account:3.0.3'
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:account:3.0.4'
 
     // Auth Service
-    implementation 'com.github.Explore-In-HMS.common-mobile-services:auth:3.0.3'
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:auth:3.0.4'
 
     // Translate
-    implementation 'com.github.Explore-In-HMS.common-mobile-services:translate:3.0.3'
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:translate:3.0.4'
 }
