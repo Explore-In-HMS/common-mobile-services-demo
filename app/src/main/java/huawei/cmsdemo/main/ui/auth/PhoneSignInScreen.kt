@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.hms.lib.commonmobileservices.auth.AuthService
+import com.hms.lib.commonmobileservices.core.Device
+import com.hms.lib.commonmobileservices.core.MobileServiceType
 import dagger.hilt.android.AndroidEntryPoint
 import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentPhoneSignInScreenBinding
@@ -38,6 +40,11 @@ class PhoneSignInScreen : Fragment() {
     }
 
     private fun initUI() {
+        if (Device.getMobileServiceType(context = requireContext()) == MobileServiceType.GMS) {
+            binding.tvSignUp.visibility = View.GONE
+            COUNTRY_CODE = getString(R.string.gms_phone_code)
+        }
+
         with(binding) {
             tvSignUp.setOnClickListener {
                 findNavController().navigate(R.id.action_phoneSignInScreen_to_phoneSignUpScreen)
@@ -61,7 +68,11 @@ class PhoneSignInScreen : Fragment() {
         }
 
         // Request the verification code first
-        authService.getPhoneCode("+90", phoneNumber, requireActivity())
+        authService.getPhoneCode(
+            countryCode = COUNTRY_CODE,
+            phoneNumber = phoneNumber,
+            activity = requireActivity()
+        )
             .addOnSuccessListener {
                 showAlertDialog()  // Show dialog for entering the verification code
             }
@@ -69,7 +80,6 @@ class PhoneSignInScreen : Fragment() {
                 requireContext().toastShort(it.message.toString())
             }
     }
-
 
     private fun showAlertDialog() {
         val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
@@ -88,7 +98,7 @@ class PhoneSignInScreen : Fragment() {
         if (verificationCode.isBlank()) {
             requireContext().toastShort(getString(R.string.code_can_t_be_blank))
         } else {
-            // Use the verification code to sign up
+            // Use the verification code to sign in
             authService.signInWithPhone(
                 countryCode = COUNTRY_CODE,
                 phoneNumber = phoneNumber,
