@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_homeScreen_to_translateScreen"
             app:destination="@id/translateScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_creditCardScannerScreen"
+            app:destination="@id/creditCardScannerScreen" />
     </fragment>
     <fragment
         android:id="@+id/adsScreen"
@@ -69,4 +72,9 @@
         android:name="huawei.cmsdemo.main.ui.translate.TranslateScreen"
         android:label="fragment_translate_screen"
         tools:layout="@layout/fragment_translate_screen" />
+    <fragment
+        android:id="@+id/creditCardScannerScreen"
+        android:name="huawei.cmsdemo.main.ui.creditcard.CreditCardScannerScreen"
+        android:label="fragment_credit_card_scanner_screen"
+        tools:layout="@layout/fragment_credit_card_scanner_screen" />
 </navigation>

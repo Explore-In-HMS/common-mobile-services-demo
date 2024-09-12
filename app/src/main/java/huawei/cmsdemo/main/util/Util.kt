@@ -41,6 +41,14 @@ object Util {
             navigationActionId = R.id.action_homeScreen_to_translateScreen
         ),
         ServicesInfo(
+            servicesName = "Credit Card Scanner",
+            version = "3.7.0.302",
+            desc =
+            "Bank card recognition service detects cards in camera streams within a 15-degree angle, extracting key details like card number and expiration date. It integrates with ID card recognition for seamless identity verification and bank card input, simplifying user operations.",
+            imageUrl = "https://cdn-icons-png.flaticon.com/128/657/657076.png",
+            navigationActionId = R.id.action_homeScreen_to_creditCardScannerScreen
+        ),
+        ServicesInfo(
             servicesName = "Push Kit",
             version = "1.3.5",
             imageUrl = "https://cdn-icons-png.flaticon.com/128/3119/3119338.png"
