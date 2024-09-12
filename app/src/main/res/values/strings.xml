@@ -90,4 +90,8 @@
     <string name="translate">Translate</string>
     <string name="text">Text...</string>
     <string name="de_tr">DE - TR</string>
+
+    // Credit Card Scanner
+    <string name="credit_card_scanner">Credit Card Scanner</string>
+    <string name="credit_card_scanner_screen">CREDIT CARD SCANNER SCREEN</string>
 </resources>

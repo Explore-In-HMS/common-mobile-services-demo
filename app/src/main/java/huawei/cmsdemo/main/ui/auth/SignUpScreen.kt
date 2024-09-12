@@ -14,10 +14,12 @@ import huawei.cmsdemo.main.R
 import huawei.cmsdemo.main.databinding.FragmentSignUpScreenBinding
 import huawei.cmsdemo.main.databinding.VerifyCodeDialogBinding
 import huawei.cmsdemo.main.util.toastShort
+import javax.inject.Inject
 
 
 class SignUpScreen : Fragment() {
-    private lateinit var authService: AuthService
+    @Inject
+    lateinit var authService: AuthService
     private lateinit var binding: FragmentSignUpScreenBinding
     private lateinit var bindingVerify: VerifyCodeDialogBinding
     private lateinit var email: String
@@ -27,7 +29,6 @@ class SignUpScreen : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        authService = AuthService.Factory.create(requireContext())
         bindingVerify = VerifyCodeDialogBinding.inflate(inflater)
         binding = FragmentSignUpScreenBinding.inflate(inflater)
         initUI()
