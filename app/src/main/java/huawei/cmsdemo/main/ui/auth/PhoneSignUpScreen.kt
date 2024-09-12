@@ -39,11 +39,11 @@ class PhoneSignUpScreen : Fragment() {
 
     private fun initUI() {
         binding.btnSignUp.setOnClickListener {
-            signUp()
+            signUpWithPhone()
         }
     }
 
-    private fun signUp() {
+    private fun signUpWithPhone() {
         phoneNumber = binding.etPhoneNumber.text.toString()
         password = binding.etPassword.text.toString()
 
@@ -65,7 +65,6 @@ class PhoneSignUpScreen : Fragment() {
                 requireContext().toastShort(it.message.toString())
             }
     }
-
 
     private fun showAlertDialog() {
         val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
