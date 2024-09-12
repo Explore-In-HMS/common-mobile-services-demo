@@ -6,14 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".ui.translate.TranslateScreen">
 
-    <TextView
-        android:id="@+id/tvTranslateTitle"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/translate_screen"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTranslateTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/translate_screen"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTranslateTitle"
+            android:paddingHorizontal="80dp"
+            android:layout_marginTop="80dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+
+            <ImageView
+                android:id="@+id/ivSourceLang"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/stat_sys_download"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/tvTranslateLanguages"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/de_tr"
+                android:textColor="@color/black"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/ivTargetLang"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/stat_sys_download"
+                app:tint="@color/black" />
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etTextField"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:hint="@string/text"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionDone"
+            android:maxLines="5"
+            android:background="@drawable/background_grey_outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTranslateTitle"/>
+
+        <Button
+            android:id="@+id/btnTranslate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="100dp"
+            android:text="@string/translate"
+            android:textColor="@color/white"
+            android:background="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTextField" />
+
+        <TextView
+            android:id="@+id/tvTranslateResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/purple_500"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
