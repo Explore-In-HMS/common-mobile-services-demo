@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_authScreen_to_emailPasswordLogin"
             app:destination="@id/emailPasswordLogin" />
+        <action
+            android:id="@+id/action_authScreen_to_phoneSignInScreen"
+            app:destination="@id/phoneSignInScreen" />
     </fragment>
     <fragment
         android:id="@+id/signUpScreen"
@@ -77,4 +80,18 @@
         android:name="huawei.cmsdemo.main.ui.creditcard.CreditCardScannerScreen"
         android:label="fragment_credit_card_scanner_screen"
         tools:layout="@layout/fragment_credit_card_scanner_screen" />
+    <fragment
+        android:id="@+id/phoneSignInScreen"
+        android:name="huawei.cmsdemo.main.ui.auth.PhoneSignInScreen"
+        android:label="fragment_phone_sign_in_screen"
+        tools:layout="@layout/fragment_phone_sign_in_screen" >
+        <action
+            android:id="@+id/action_phoneSignInScreen_to_phoneSignUpScreen"
+            app:destination="@id/phoneSignUpScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/phoneSignUpScreen"
+        android:name="huawei.cmsdemo.main.ui.auth.PhoneSignUpScreen"
+        android:label="fragment_phone_sign_up_screen"
+        tools:layout="@layout/fragment_phone_sign_up_screen" />
 </navigation>

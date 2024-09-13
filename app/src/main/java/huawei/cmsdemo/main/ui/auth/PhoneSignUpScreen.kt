@@ -9,21 +9,22 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.hms.lib.commonmobileservices.auth.AuthService
-import com.hms.lib.commonmobileservices.auth.common.VerificationType
 import dagger.hilt.android.AndroidEntryPoint
 import huawei.cmsdemo.main.R
-import huawei.cmsdemo.main.databinding.FragmentSignUpScreenBinding
+import huawei.cmsdemo.main.databinding.FragmentPhoneSignUpScreenBinding
 import huawei.cmsdemo.main.databinding.VerifyCodeDialogBinding
+import huawei.cmsdemo.main.util.Constants
+import huawei.cmsdemo.main.util.Constants.COUNTRY_CODE
 import huawei.cmsdemo.main.util.toastShort
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class SignUpScreen : Fragment() {
+class PhoneSignUpScreen : Fragment() {
     @Inject
     lateinit var authService: AuthService
-    private lateinit var binding: FragmentSignUpScreenBinding
+    private lateinit var binding: FragmentPhoneSignUpScreenBinding
     private lateinit var bindingVerify: VerifyCodeDialogBinding
-    private lateinit var email: String
+    private lateinit var phoneNumber: String
     private lateinit var password: String
 
     override fun onCreateView(
@@ -31,34 +32,34 @@ class SignUpScreen : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         bindingVerify = VerifyCodeDialogBinding.inflate(inflater)
-        binding = FragmentSignUpScreenBinding.inflate(inflater)
+        binding = FragmentPhoneSignUpScreenBinding.inflate(inflater)
         initUI()
         return binding.root
     }
 
     private fun initUI() {
         binding.btnSignUp.setOnClickListener {
-            signUp()
+            signUpWithPhone()
         }
     }
 
-    private fun signUp() {
-        email = binding.etEmail.text.toString()
+    private fun signUpWithPhone() {
+        phoneNumber = binding.etPhoneNumber.text.toString()
         password = binding.etPassword.text.toString()
 
-        if (email.isBlank() || password.isBlank()) {
-            requireContext().toastShort(getString(R.string.email_and_password_can_t_be_blank))
+        if (phoneNumber.isBlank() || password.isBlank()) {
+            requireContext().toastShort(getString(R.string.phone_and_password_can_t_be_blank))
             return
         }
 
-        authService.signUp(email, password)
+        // Request the verification code first
+        authService.getPhoneCode(
+            countryCode = Constants.COUNTRY_CODE,
+            phoneNumber = phoneNumber,
+            activity = requireActivity()
+        )
             .addOnSuccessListener {
-                if (it == VerificationType.CODE) {
-                    showAlertDialog()
-                } else if (it == VerificationType.NON) {
-                    requireContext().toastShort(getString(R.string.successfully_signed_up))
-                    findNavController().popBackStack()
-                }
+                showAlertDialog()  // Show dialog for entering the verification code
             }
             .addOnFailureListener {
                 requireContext().toastShort(it.message.toString())
@@ -82,7 +83,13 @@ class SignUpScreen : Fragment() {
         if (verificationCode.isBlank()) {
             requireContext().toastShort(getString(R.string.code_can_t_be_blank))
         } else {
-            authService.verifyCode(email, password, verificationCode)
+            // Use the verification code to sign up
+            authService.signUpWithPhone(
+                countryCode = COUNTRY_CODE,
+                phoneNumber = phoneNumber,
+                password = password,
+                verifyCode = verificationCode
+            )
                 .addOnSuccessListener {
                     requireContext().toastShort(getString(R.string.successfully_signed_up))
                     dialogInterface.dismiss()
