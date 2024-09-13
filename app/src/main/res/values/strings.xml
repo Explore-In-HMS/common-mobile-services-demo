@@ -81,6 +81,15 @@
     // Translate Kit
     <string name="translate_screen">TRANSLATE SCREEN</string>
     <string name="translate_kit">Translate Kit</string>
+    <string name="source_lang">de</string>
+    <string name="target_lang">tr</string>
+    <string name="text_can_t_be_blank">Text can\'t be blank</string>
+    <string name="required">%1$s Required</string>
+    <string name="not_required">%1$s NotRequired</string>
+    <string name="model_downloaded">%1$s model downloaded!</string>
+    <string name="translate">Translate</string>
+    <string name="text">Text...</string>
+    <string name="de_tr">DE - TR</string>
 
     // Credit Card Scanner
     <string name="credit_card_scanner">Credit Card Scanner</string>

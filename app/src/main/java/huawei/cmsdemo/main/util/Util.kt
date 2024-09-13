@@ -35,7 +35,7 @@ object Util {
         ),
         ServicesInfo(
             servicesName = "Translate Kit",
-            version = "2.4.5",
+            version = "HMS: 3.11.0.302\nGMS: 17.0.3",
             desc = "Translate Kit with the support of an on-device model, the on-device translation service can translate text from the source language into the target language.",
             imageUrl = "https://cdn-icons-png.flaticon.com/128/4534/4534766.png",
             navigationActionId = R.id.action_homeScreen_to_translateScreen
