@@ -97,4 +97,8 @@
     // Credit Card Scanner
     <string name="credit_card_scanner">Credit Card Scanner</string>
     <string name="credit_card_scanner_screen">CREDIT CARD SCANNER SCREEN</string>
+
+    // Text To Speech
+    <string name="text_to_speech">Text To Speech</string>
+    <string name="text_to_speech_screen">TEXT TO SPEECH SCREEN</string>
 </resources>
