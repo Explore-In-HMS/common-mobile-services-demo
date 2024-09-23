@@ -49,6 +49,13 @@ object Util {
             navigationActionId = R.id.action_homeScreen_to_creditCardScannerScreen
         ),
         ServicesInfo(
+            servicesName = "Text To Speech",
+            version = "3.12.0.301",
+            desc = "The Text-to-Speech (TTS) service converts text to natural-sounding audio using deep neural network synthesis, offering multiple voices in Mandarin, English, French, and Spanish, with options for timbre, volume, and speed.",
+            imageUrl = "https://cdn-icons-png.flaticon.com/128/13063/13063588.png",
+            navigationActionId = R.id.action_homeScreen_to_textToSpeechScreen
+        ),
+        ServicesInfo(
             servicesName = "Push Kit",
             version = "1.3.5",
             imageUrl = "https://cdn-icons-png.flaticon.com/128/3119/3119338.png"
@@ -100,11 +107,6 @@ object Util {
         ),
         ServicesInfo(
             servicesName = "Speech To Text",
-            version = "2.4.5",
-            imageUrl = "https://cdn-icons-png.flaticon.com/128/13063/13063588.png"
-        ),
-        ServicesInfo(
-            servicesName = "Text To Speech",
             version = "2.4.5",
             imageUrl = "https://cdn-icons-png.flaticon.com/128/13063/13063588.png"
         ),
