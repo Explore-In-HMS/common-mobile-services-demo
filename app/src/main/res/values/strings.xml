@@ -91,11 +91,12 @@
     <string name="not_required">%1$s NotRequired</string>
     <string name="model_downloaded">%1$s model downloaded!</string>
     <string name="translate">Translate</string>
-    <string name="text">Text...</string>
+    <string name="text">Text…</string>
     <string name="de_tr">DE - TR</string>
 
     // Credit Card Scanner
     <string name="credit_card_scanner">Credit Card Scanner</string>
     <string name="credit_card_scanner_screen">CREDIT CARD SCANNER SCREEN</string>
     <string name="scan_result">Card Number: %1$s \nExpire Date: %2$s</string>
+    <string name="start_scan">Start Scan</string>
 </resources>
