@@ -92,4 +92,7 @@ dependencies {
 
     // Translate
     implementation 'com.github.Explore-In-HMS.common-mobile-services:translate:3.0.4'
+
+    // CreditCardScanner
+    implementation 'com.github.Explore-In-HMS.common-mobile-services:creditcardscanner:3.0.4'
 }
