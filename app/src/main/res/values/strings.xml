@@ -99,4 +99,8 @@
     <string name="credit_card_scanner_screen">CREDIT CARD SCANNER SCREEN</string>
     <string name="scan_result">Card Number: %1$s \nExpire Date: %2$s</string>
     <string name="start_scan">Start Scan</string>
+
+    // Text To Speech
+    <string name="text_to_speech">Text To Speech</string>
+    <string name="text_to_speech_screen">TEXT TO SPEECH SCREEN</string>
 </resources>
